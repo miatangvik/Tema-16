@@ -1,0 +1,87 @@
+html {
+    background: none;
+}
+
+h2, h3 {
+    position: relative;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #DEECF3;
+}
+
+h2 {
+    margin-top: 8px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+p {
+    position: relative;
+    left: 10vw;
+    width: 30vw;
+    margin: 0;
+    font-family: 'Old Standard TT', serif;
+    line-height: 1.7;
+    text-align: justify;
+    color: #243B5A;
+}
+
+blockquote {
+    width: 51vw;
+    margin: 0 auto;
+    font-family: 'Indie Flower', cursive;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#section1 {
+    background: url(../img/flowers.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(7, 0, 62, 0.35);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#section2 {
+    display: flex;
+    align-items: center;
+    background: url(../img/roses.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#section3 {
+    display: flex;
+    align-items: center;
+    height: 25vh;
+    background-color: #D1DBF3;
+}
+
+.quotation-mark {
+    position: absolute;
+    left: 17vw;
+    margin-top: 4vh;
+    font-family: 'Georgia', serif;
+    font-size: 200px;
+    color: #7F7496;
+}

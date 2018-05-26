@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: url(../img/background.jpg) no-repeat top fixed;
+    background-size: cover;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+
+a, h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+a {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+h1 {
+    position: relative;
+    top: 35vh;
+    float: right;
+    margin-right: 64px;
+    font-size: 55px;
+    font-weight: 800;
+    text-align: right;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
