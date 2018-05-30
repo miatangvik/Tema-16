@@ -67,14 +67,18 @@ function changePage() {
         var newBody = document.createElement('body');
         newBody = response.querySelector('body');
 
-        var oldHead = document.querySelector('head');
-        var oldBody = document.querySelector('body');
+        // Remove old content
+        document.querySelector('head').remove();
+        document.querySelector('body').remove();
 
         html.appendChild(newHead);
         html.appendChild(newBody);
 
-        oldHead.remove();
-        oldBody.remove();
+        // Fade in new content
+        newBody.animate({
+            opacity: [0.6, 1]
+        }, 1000);
+
 
         // Reload JavaScript
         //var scriptSrc = newBody.querySelector('script').src;
