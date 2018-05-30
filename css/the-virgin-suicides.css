@@ -1,5 +1,10 @@
-html {
-    background: none;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h2, h3 {

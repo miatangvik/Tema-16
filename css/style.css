@@ -3,44 +3,127 @@
 }
 
 html {
-    background: url(../img/background.jpg) no-repeat top fixed;
+    background: #68527F url(../img/background.jpg) top no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 body {
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 nav {
+    z-index: 2;
     display: flex;
+    position: relative;
     justify-content: space-around;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 a, h1 {
-    font-family: 'Montserrat', sans-serif;
     color: white;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
 a {
+    width: 11vw;
     font-size: 13px;
     font-weight: 600;
+    text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
-h1 {
-    position: relative;
-    top: 35vh;
-    float: right;
+a:hover {
+    font-weight: 800;
+}
+
+h1 {    
     margin-right: 64px;
+    width: 65vw;
     font-size: 55px;
     font-weight: 800;
     text-align: right;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: 2s fadein;
 }
 
-.hidden {
-    display: none;
+h2 {
+    margin: 0;
+    opacity: 0;
+    color: white;
+    font-family: 'Old Standard TT', serif;
+    margin: 0 15vw;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(5px);
+    transition: all 0.5s 0.3s;
+}
+
+section {
+    display: flex;
+    position: absolute;
+    top: -100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.5s ease;
+}
+
+#the-virgin-suicides {
+    background: url(../img/the-virgin-suicides.jpg) top no-repeat;
+    background-size: cover;
+}
+
+#american-beauty {
+    background: url(../img/american-beauty.jpg) top no-repeat;
+    background-size: cover;
+}
+
+#black-swan {
+    background: url(../img/black-swan.jpg) top no-repeat;
+    background-size: cover;
+}
+
+#the-neon-demon {
+    background: url(../img/the-neon-demon.jpg) top no-repeat;
+    background-size: cover;
+}
+
+#lolita {
+    background: url(../img/lolita.jpg) top no-repeat;
+    background-size: cover;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+}
+
+.is-visible {
+    z-index: 1;
+    transform: translateY(100vh);
+}
+
+.is-visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }

@@ -1,5 +1,43 @@
+var movieLinks = document.querySelectorAll('a');
+var movies = document.querySelectorAll('section');
+
+movieLinks.forEach(function (movieLink, index) {
+    movieLink.addEventListener('mouseover', function () {
+        movies[index].classList.add('is-visible');
+    });
+});
+
+movieLinks.forEach(function (movieLink) {
+    movieLink.addEventListener('mouseout', function () {
+        movies.forEach(function (movie) {
+            movie.classList.remove('is-visible');
+        });
+    });
+});
+
+
+/* ROUTING AND PAGE TRANSITIONS */
+
 var html = document.querySelector('html');
 var cache = {};
+
+document.addEventListener('click', function (e) {
+    var el = e.target;
+
+    while (el && !el.href) {
+        el = el.parentNode;
+    }
+
+    if (el) {
+        e.preventDefault();
+        history.pushState(null, null, el.href);
+        changePage();
+
+        return;
+    }
+});
+
+window.addEventListener('popstate', changePage);
 
 function loadPage(url) {
     if (cache[url]) {
@@ -31,29 +69,18 @@ function changePage() {
 
         var oldHead = document.querySelector('head');
         var oldBody = document.querySelector('body');
-        
+
         html.appendChild(newHead);
         html.appendChild(newBody);
-        
-        oldHead.parentNode.removeChild(oldHead);
-        oldBody.parentNode.removeChild(oldBody);
+
+        oldHead.remove();
+        oldBody.remove();
+
+        // Reload JavaScript
+        //var scriptSrc = newBody.querySelector('script').src;
+        //newBody.querySelector('script').remove();
+        //var newScript = document.createElement('script');
+        //newScript.src = scriptSrc;
+        //newBody.appendChild(newScript);
     });
 }
-
-window.addEventListener('popstate', changePage);
-
-document.addEventListener('click', function (e) {
-    var el = e.target;
-
-    while (el && !el.href) {
-        el = el.parentNode;
-    }
-
-    if (el) {
-        e.preventDefault();
-        history.pushState(null, null, el.href);
-        changePage();
-
-        return;
-    }
-});
